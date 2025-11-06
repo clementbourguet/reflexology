@@ -17,18 +17,19 @@ html {
 header {
   width: 100%;
   height: auto;
+  background-color: white;
 }
+
 nav {
   width: 100%;
   height: 100%;
-  padding-top: 40px;
-}
-nav {
+  padding: 40px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 nav .logo #logo,
 footer .logo img {
   width: 340px;
@@ -75,7 +76,7 @@ nav ul {
   margin-top: 1rem;
 }
 /*------------------Main---------------------*/
-body {
+main {
   background: linear-gradient(
     0deg,
     rgba(255, 255, 255, 1) 0%,
@@ -88,7 +89,7 @@ body {
 /**-----flowers------*/
 .flowers {
   position: absolute;
-  top: 10rem;
+  top: 13rem;
   left: 0;
   height: 45%;
   width: 100%;
@@ -256,6 +257,8 @@ article a {
 
 /*--------------------FOOTER--------------------*/
 footer {
+  width: 100%;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -335,4 +338,10 @@ nav .main_nav {
 }
 #close_menu {
   display: none;
+}
+
+/*--------------------view Connexion--------------------*/
+
+#main_connexion {
+  min-height: 60vh;
 }

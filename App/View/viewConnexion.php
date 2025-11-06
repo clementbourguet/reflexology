@@ -29,7 +29,7 @@
 
     <!--------------main---------------->
 
-    <main>
+    <main id="main_connexion">
         <section class="section_connexion">
             <div class="container_connexion">
                 <h1 id="h1_medium">SE CONNECTER</h1>

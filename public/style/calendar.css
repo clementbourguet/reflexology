@@ -92,11 +92,7 @@
     font-weight: bold;
     font-size: 1rem;
 }
-footer img {
-    width: 60%;
-    margin-bottom: 50px;
-    cursor: pointer;
-}
+
 footer {
 text-align: center;
 }
