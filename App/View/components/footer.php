@@ -1,5 +1,5 @@
 <div class="logo"><a href="<?= BASE_URL ?>/">
-    <img src="<?= BASE_URL ?>/img/logoHD.png" alt="image du logo de Violette Gilavert Reflexologie"></a></div>
+    <img src="<?= BASE_URL ?>/public/image/logoHD.png" alt="image du logo de Violette Gilavert Reflexologie"></a></div>
 <div class="footer_container">
     <div class="social">
         <a href="#"><img src="<?= BASE_URL ?>/public/image/phone.png" alt="logo téléphone"></a>

@@ -54,6 +54,14 @@ nav ul {
   width: 30px;
 }
 
+#custom {
+  color: var(--accent-color);
+  font-family: var(--font-p-bold);
+}
+#sign_out {
+  color: var(--primary-color);
+  font-family: var(--font-p-bold);
+}
 /*---pink_line---*/
 
 .hero_section .pink_line {
@@ -301,9 +309,9 @@ footer {
 ul a,
 li {
   margin: 0 4px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   font-family: var(--font-p);
-  color: var(--accent-color);
+  color: var(--primary-color);
   cursor: pointer;
 }
 
@@ -324,4 +332,7 @@ nav .main_nav {
   margin: 0;
   padding: 0;
   align-items: center;
+}
+#close_menu {
+  display: none;
 }

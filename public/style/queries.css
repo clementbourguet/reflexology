@@ -63,7 +63,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    gap: 4.5rem;
+    gap: 3.5rem;
     transform: translateX(100%);
     transition: transform 300ms ease;
     z-index: 1200;
@@ -91,4 +91,12 @@
     cursor: pointer;
     width: 100%;
   }
+  #mobile_menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;             /* ou 100% selon ton design */
+  height: 100vh;
+  overflow: hidden;       /* ✅ interdit tout scroll */
+}
 }

@@ -41,7 +41,7 @@
         <section class="buttons">
             <a class="btn_reserver" href="<?= BASE_URL ?>/book">RÉSERVER UNE SÉANCE</a>
             <a class="savoir_plus" href="#">EN SAVOIR PLUS</a>
-            <img id="arrow" src="<?= BASE_URL ?>/img/arrow.png" alt="Logo de fleche vers le bas">
+            <img id="arrow" src="<?= BASE_URL ?>/public/image/arrow.png" alt="Logo de fleche vers le bas">
         </section>
 
         <section class="articles">

@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/style/back_office.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/style/calendar.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/style/queries.css">
-        <!--favicon-->
+    <!--favicon-->
     <link rel="icon" type="image/png" href="<?= BASE_URL ?>/public/image/favicon/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="<?= BASE_URL ?>/public/image/favicon/favicon.svg" />
     <link rel="shortcut icon" href="<?= BASE_URL ?>/public/image/favicon/favicon.ico" />
@@ -21,90 +21,91 @@
 </head>
 
 <body>
-<header>
-    <div class="container">
-        <?php include __DIR__ . '/components/navbar.php'; ?>
-    </div>
-</header>
-
-<main>
-    <div class="container_form_connexion">
-    <h1>Back Office - Gestion des prestations</h1>
-
-
-    <form method="GET" action="<?= BASE_URL ?>/admin">
-        <label for="service_id">Choisir une prestation :</label>
-        <select name="id" id="service_id" onchange="this.form.submit()">
-            <option value="">-- Sélectionner --</option>
-            <?php foreach ($services as $service): ?>
-                <option value="<?= $service['id'] ?>" 
-                    <?= isset($_GET['id']) && $_GET['id'] == $service['id'] ? 'selected' : '' ?>>
-                    <?= htmlspecialchars($service['name']) ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-    </form>
-
-
-    <?php if (!empty($selectedService)): ?>
-        <div class="service_form">
-            <h2>Modifier la prestation</h2>
-            <form method="POST" action="<?= BASE_URL ?>/admin/edit/<?= $selectedService['id'] ?>">
-                <label>Titre
-                    <input type="text" name="name" value="<?= htmlspecialchars($selectedService['name']) ?>">
-                </label>
-                <label>Description
-                    <textarea name="description"><?= htmlspecialchars($selectedService['description']) ?></textarea>
-                </label>
-                <label>Durée (minutes)
-                    <input type="number" name="duration_minutes" value="<?= htmlspecialchars($selectedService['duration_minutes']) ?>">
-                </label>
-                <label>Prix (€)
-                    <input type="number" step="0.01" name="price" value="<?= htmlspecialchars($selectedService['price']) ?>">
-                </label>
-                <label>Active ?
-                    <input type="checkbox" name="active" value="1" <?= $selectedService['active'] ? 'checked' : '' ?>>
-                </label>
-
-                <div class="actions">
-                    <button type="submit">Enregistrer</button>
-                    <a href="<?= BASE_URL ?>/admin/delete/<?= $selectedService['id'] ?>" onclick="return confirm('Supprimer cette prestation ?')">Supprimer</a>
-                </div>
-            </form>
+    <header>
+        <div class="container">
+            <?php include __DIR__ . '/components/navbar.php'; ?>
         </div>
-    <?php endif; ?>
+    </header>
 
-    <div class="new_service service_form">
-        <h2>Ajouter une nouvelle prestation</h2>
-        <form method="POST" action="<?= BASE_URL ?>/admin/add">
-            <label>Titre
-                <input type="text" name="name">
-            </label>
-            <label>Description
-                <textarea name="description"></textarea>
-            </label>
-            <label>Durée (minutes)
-                <input type="number" name="duration_minutes">
-            </label>
-            <label>Prix (€)
-                <input type="number" step="0.01" name="price">
-            </label>
-            <label>Active ?
-                <input type="checkbox" name="active" value="1" checked>
-            </label>
+    <main>
+        <div class="container_form_connexion">
+            <h1>Back Office - Gestion des prestations</h1>
 
-            <div class="actions">
-                <button type="submit">Créer</button>
+
+            <form method="GET" action="<?= BASE_URL ?>/admin">
+                <label for="service_id">Choisir une prestation :</label>
+                <select name="id" id="service_id" onchange="this.form.submit()">
+                    <option value="">-- Sélectionner --</option>
+                    <?php foreach ($services as $service): ?>
+                        <option value="<?= $service['id'] ?>"
+                            <?= isset($_GET['id']) && $_GET['id'] == $service['id'] ? 'selected' : '' ?>>
+                            <?= htmlspecialchars($service['name']) ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </form>
+
+
+            <?php if (!empty($selectedService)): ?>
+                <div class="service_form">
+                    <h2>Modifier la prestation</h2>
+                    <form method="POST" action="<?= BASE_URL ?>/admin/edit/<?= $selectedService['id'] ?>">
+                        <label>Titre
+                            <input type="text" name="name" value="<?= htmlspecialchars($selectedService['name']) ?>">
+                        </label>
+                        <label>Description
+                            <textarea name="description"><?= htmlspecialchars($selectedService['description']) ?></textarea>
+                        </label>
+                        <label>Durée (minutes)
+                            <input type="number" name="duration_minutes" value="<?= htmlspecialchars($selectedService['duration_minutes']) ?>">
+                        </label>
+                        <label>Prix (€)
+                            <input type="number" step="0.01" name="price" value="<?= htmlspecialchars($selectedService['price']) ?>">
+                        </label>
+                        <label>Active ?
+                            <input type="checkbox" name="active" value="1" <?= $selectedService['active'] ? 'checked' : '' ?>>
+                        </label>
+
+                        <div class="actions">
+                            <button type="submit">Enregistrer</button>
+                            <a href="<?= BASE_URL ?>/admin/delete/<?= $selectedService['id'] ?>" onclick="return confirm('Supprimer cette prestation ?')">Supprimer</a>
+                        </div>
+                    </form>
+                </div>
+            <?php endif; ?>
+
+            <div class="new_service service_form">
+                <h2>Ajouter une nouvelle prestation</h2>
+                <form method="POST" action="<?= BASE_URL ?>/admin/add">
+                    <label>Titre
+                        <input type="text" name="name">
+                    </label>
+                    <label>Description
+                        <textarea name="description"></textarea>
+                    </label>
+                    <label>Durée (minutes)
+                        <input type="number" name="duration_minutes">
+                    </label>
+                    <label>Prix (€)
+                        <input type="number" step="0.01" name="price">
+                    </label>
+                    <label>Active ?
+                        <input type="checkbox" name="active" value="1" checked>
+                    </label>
+
+                    <div class="actions">
+                        <button type="submit">Créer</button>
+                    </div>
+                </form>
             </div>
-        </form>
-    </div>
-</div>
+        </div>
 
-</main>
+    </main>
 
-<footer>
-    <?php include __DIR__ . '/components/footer.php'; ?>
-</footer>
-
+    <footer>
+        <?php include __DIR__ . '/components/footer.php'; ?>
+    </footer>
+    <script src="<?= BASE_URL ?>/public/script/script.js"></script>
 </body>
+
 </html>
