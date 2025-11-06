@@ -8,10 +8,10 @@
 
     /*------Variables fonts------*/
 
-    --font-h1: 'cormorant Regular', serif;
-    --font-h2: 'cormorant light', serif;
+    --font-h1: 'Cormorant Regular', serif;
+    --font-h2: 'Cormorant light', serif;
     --font-p: 'Quicksand Regular', serif;
     --font-p-bold: 'Quicksand Bold', serif;
 
-    --font-h3: 'quicksand Bold', sans-serif;
+    --font-h3: 'Quicksand Regular', sans-serif;
 } 

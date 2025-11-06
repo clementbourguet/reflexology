@@ -30,14 +30,12 @@ class AdminController
                 'price'            => (float) ($_POST['price'] ?? 0),
                 'active'           => isset($_POST['active']) ? 1 : 0,
             ];
-
             $serviceModel = new Service();
             $serviceModel->addService($data);
 
             header("Location: " . BASE_URL . "/admin");
             exit;
         }
-
         header("Location: " . BASE_URL . "/admin");
         exit;
     }

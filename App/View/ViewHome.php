@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Violette Gilavert Reflexologie</title>
-    <link rel="stylesheet" href="./public/style/reset.css">
     <link rel="stylesheet" href="./public/style/variables.css">
+    <link rel="stylesheet" href="./public/style/reset.css">
     <link rel="stylesheet" href="./public/style/fonts.css">
     <link rel="stylesheet" href="./public/style/style.css">
     <link rel="stylesheet" href="./public/style/queries.css">
@@ -20,34 +20,34 @@
 
 <body>
     <!--HEADER-->
-    <header>
-        <div class="container">
-            <?php include __DIR__ . '/components/navbar.php'; ?>
-            </div>
+    <header class="container">
+        <?php include __DIR__ . '/components/navbar.php'; ?>
     </header>
 
     <!--main-->
 
     <main>
-        <div class="container hero">
+        <div class="hero_section">
             <h1>RÉFLEXOLOGUE EI</h1>
             <h2>Méthode Sonia FISHMANN <sup>&reg;</sup></h2>
-            <h3>RÉFLEXOLOGIE COMBINÉE</h3>
+            <h3>RÉFLEXOLOGIE <br> COMBINÉE</h3>
             <div class="pink_line"></div>
-            <img src="./public/image/light_flower.png" alt="logo fleur violette opacité" id="light_flower">
-            <img src="./public/image/light_flower.png" alt="logo fleur violette opacité" id="light_flower_2">
         </div>
+        <div class="flowers">
+            <img id="light_flower" src="./public/image/light_flower.png" alt="logo fleur violette opacité">
+            <img id="light_flower_2" src="./public/image/light_flower.png" alt="logo fleur violette opacité">
+        </div>
+
         <section class="buttons">
             <a class="btn_reserver" href="<?= BASE_URL ?>/book">RÉSERVER UNE SÉANCE</a>
             <a class="savoir_plus" href="#">EN SAVOIR PLUS</a>
-            <img id="arrow" src="./public/image/arrow.png" alt="">
+            <img id="arrow" src="<?= BASE_URL ?>/img/arrow.png" alt="Logo de fleche vers le bas">
         </section>
 
         <section class="articles">
             <article>
                 <img id="flower_round" src="./public/image/flower_round.png" alt="image de fleur dans un rond">
                 <h3>LA RÉFLEXOLOGIE:</h3>
-                <div class="pink_line"></div>
                 <p>La <strong>réflexologie</strong> est une technique de soin pratiquées sur des <em>"zones
                         réflexes"</em> qui consiste à
                     effectuer des pressions sur des points précis de ces zones, de manière à agir sur différentes
@@ -58,10 +58,11 @@
                     <p>En savoir plus...</p>
                 </a>
             </article>
+            <div class="pink_line"></div>
             <article>
                 <img id="flower_round" src="./public/image/flower_round.png" alt="image de fleur dans un rond">
                 <h3>DÉROULEMENT D’UNE SÉANCE:</h3>
-                <div class="pink_line"></div>
+
                 <p>Les séances se déroulent en 60 minutes,
                     J’accueille et j’élabore mon <em>recueil d’informations</em>, je prend note devant mon bénéficiaire
                     en lui
@@ -81,9 +82,9 @@
         </section>
     </main>
     <footer>
-       <?php include __DIR__ . '/components/footer.php'; ?>
+        <?php include __DIR__ . '/components/footer.php'; ?>
     </footer>
-
+    <script src="<?= BASE_URL ?>/public/script/script.js"></script>
 </body>
 
 </html>

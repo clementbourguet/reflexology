@@ -3,6 +3,7 @@
 namespace App\Model;
 
 use App\Utils\Bdd;
+use App\Utils\Utilitaire;
 
 class User
 {
@@ -125,17 +126,18 @@ class User
     public function saveUser(): User
     {
         try {
-            $firstname = $this->firstname;
-            $lastname = $this->lastname;
-            $email = $this->email;
-            $password = $this->password;
-            $telephone = $this->telephone;
+            // Sanitize uniquement ici
+            $firstname = Utilitaire::sanitize($this->firstname);
+            $lastname  = Utilitaire::sanitize($this->lastname);
+            $email     = Utilitaire::sanitize($this->email);
+            $password  = $this->password; // déjà hashé si hashPassword() appelé avant
+            $telephone = Utilitaire::sanitize($this->telephone);
             $signupDate = date("Y-m-d H:i:s");
             $connexionDate = date("Y-m-d H:i:s");
             $active = 1;
 
             $request = "INSERT INTO users(firstname, lastname, email, password, telephone, signup_date, connexion_date, active) 
-                    VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             $req = $this->connexion->prepare($request);
             $req->bindParam(1, $firstname);
             $req->bindParam(2, $lastname);
@@ -160,7 +162,7 @@ class User
     public function isUserByEmailExist(): bool
     {
         try {
-            $email = $this->email;
+            $email = Utilitaire::sanitize($this->email);
             $request = "SELECT u.id FROM users AS u WHERE u.email = ?";
             $req = $this->connexion->prepare($request);
             $req->bindParam(1, $email);
@@ -176,9 +178,10 @@ class User
     public function findUserByEmail(): ?User
     {
         try {
-            $email = $this->email;
-            $request = "SELECT u.id AS idUser, u.firstname, u.lastname, u.password, u.email, u.active, u.id_roles AS idRoles 
-                    FROM users AS u WHERE u.email = ?";
+            $email = Utilitaire::sanitize($this->email);
+            $request = "SELECT u.id AS idUser, u.firstname, u.lastname,
+             u.password, u.email, u.active, u.id_roles AS idRoles 
+                        FROM users AS u WHERE u.email = ?";
             $req = $this->connexion->prepare($request);
             $req->bindParam(1, $email);
             $req->execute();

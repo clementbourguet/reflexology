@@ -41,7 +41,7 @@
         <?php
         if (!empty($_SESSION['success_message'])) {
             echo '<p style="color:green; text-align:center;">' . htmlspecialchars($_SESSION['success_message']) . '</p>';
-            unset($_SESSION['success_message']); // on supprime après affichage
+            unset($_SESSION['success_message']);
         }
         ?>
 
