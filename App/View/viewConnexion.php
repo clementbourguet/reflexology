@@ -28,8 +28,12 @@
     </header>
 
     <!--------------main---------------->
-
+    <section class="btn_back">
+        <a id="btn_back">
+            < Retour</a>
+    </section>
     <main id="main_connexion">
+
         <section class="section_connexion">
             <div class="container_connexion">
                 <h1 id="h1_medium">SE CONNECTER</h1>
@@ -40,25 +44,31 @@
         <!-------------------------Message de confirmation---------------------------->
         <?php
         if (!empty($_SESSION['success_message'])) {
-            echo '<p style="color:green; text-align:center;">' . htmlspecialchars($_SESSION['success_message']) . '</p>';
+            echo '<p class="success_message">' . htmlspecialchars($_SESSION['success_message']) . '</p>';
             unset($_SESSION['success_message']);
         }
         ?>
 
         <!-------------------------Formulaire de connexion---------------------------->
         <?php if (!empty($error)) : ?>
-            <p style="color:red; text-align:center;"><?= htmlspecialchars($error) ?></p>
+            <p class="error_message"><?= htmlspecialchars($error) ?></p>
         <?php endif; ?>
 
         <section class="section_form_connexion">
             <div class="container_form_connexion">
                 <form action="<?= BASE_URL ?>/connexion" method="post" class="form_connexion">
-                    <label for="email">Email</label>
+                    <label for="email">Adresse e-mail</label>
                     <input type="email" id="email" name="email" placeholder="saisir votre email" required>
-
+                    <div class="helper_text">
+                        <img id="email_valid" src="<?= BASE_URL ?>/public/image/email_valid.png" alt="Logo validation email">
+                        <span>Entrez une adresse e-mail valide</span>
+                    </div>
                     <label for="password">Mot de passe</label>
                     <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe" required>
-
+                    <div class="checkbox_group">
+                        <input type="checkbox" id="showPassword" onclick="togglePassword()">
+                        <label for="showPassword">Afficher le mot de passe</label>
+                    </div>
                     <button type="submit">VALIDER</button>
                     <p class="p_form_connexion"><a href="<?= BASE_URL ?>/mot-de-passe-oublie" id="forgot">Mot de passe oublié ?</a></p>
                     <p class="signup_text">Pas encore de compte ? <a href="<?= BASE_URL ?>/inscription">Inscrivez-vous</a></p>

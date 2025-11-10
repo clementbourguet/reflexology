@@ -159,3 +159,23 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
+// -------------------- Bouton retour < Retour --------------------
+
+document.getElementById('btn_back').addEventListener('click', function (e) {
+    e.preventDefault();
+    history.back();
+  });
+
+// --------------------checkbox afficher/masquer mot de passe (formulaire) -----------
+  function togglePassword() {
+    const passwordInput = document.getElementById('password');
+    const checkbox = document.getElementById('showPassword');
+    
+    if (checkbox.checked) {
+        passwordInput.type = 'text';
+    } else {
+        passwordInput.type = 'password';
+    }
+}

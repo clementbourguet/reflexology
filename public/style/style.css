@@ -1,4 +1,3 @@
-
 * {
   li {
     list-style: none;
@@ -10,7 +9,7 @@ html {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden; /* Cache le débordement horizontal */
+  overflow-x: hidden;
 }
 
 /* ------------------Navbar------------------- */
@@ -23,7 +22,7 @@ header {
 nav {
   width: 100%;
   height: 100%;
-  padding: 40px 0px;
+  padding: 20px 0px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,7 +57,10 @@ nav ul {
 #custom {
   color: var(--accent-color);
   font-family: var(--font-p-bold);
+  pointer-events: none;
+  cursor: default;
 }
+
 #sign_out {
   color: var(--primary-color);
   font-family: var(--font-p-bold);
@@ -101,7 +103,7 @@ main {
 #light_flower {
   position: absolute;
   left: 0;
-  top: 50%; 
+  top: 50%;
   transform: translateY(-50%) translateX(-50%);
   height: 100%;
   width: auto;
@@ -110,7 +112,7 @@ main {
 #light_flower_2 {
   position: absolute;
   right: 0;
-  top: 50%; 
+  top: 50%;
   transform: translateY(-50%) translateX(50%);
   height: 100%;
   width: auto;
@@ -171,13 +173,26 @@ h3 {
   align-items: center;
 }
 
-.btn_reserver {
+.btn_reserver,
+button[type="submit"] {
   background-color: white;
   padding: 15px 31px;
   border-radius: 10px;
   color: var(--primary-color);
-  border: solid 2px var(--primary-color);
+  border: solid 1px var(--primary-color);
   font-family: var(--font-p-bold);
+}
+/* "hover "pour mobile */
+.btn_reserver:active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn_reserver:hover,
+.savoir_plus:hover {
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
 }
 
 .savoir_plus {
@@ -186,7 +201,7 @@ h3 {
   padding: 15px 62px;
   border-radius: 10px;
   color: var(--primary-color);
-  border: solid 2px var(--primary-color);
+  border: solid 1px var(--primary-color);
   font-family: var(--font-p-bold);
 }
 
@@ -318,6 +333,10 @@ li {
   cursor: pointer;
 }
 
+footer li a {
+  color: var(--accent-color);
+}
+
 #clement {
   margin-bottom: 25px;
   margin-top: 25px;
@@ -341,7 +360,138 @@ nav .main_nav {
 }
 
 /*--------------------view Connexion--------------------*/
+/*-------------formulaire------------*/
+
+.success_message {
+  color: green;
+  text-align: center;
+  padding: 15px;
+  margin: 10px 0;
+  font-family: var(--font-p-bold);
+  display: flex;
+  justify-content: center;
+}
+.error_message {
+  color: rgb(217, 3, 3);
+  text-align: center;
+  padding: 15px;
+  margin: 10px 0;
+  font-family: var(--font-p-bold);
+  display: flex;
+  justify-content: center;
+}
 
 #main_connexion {
   min-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container_connexion,
+.container_form_connexion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 30px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 15px;
+}
+
+.btn_back {
+  margin: 10px 0px 20px 20px;
+  font-family: var(--font-p-bold);
+  color: var(--accent-color);
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+.helper_text,
+.checkbox_group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.6rem;
+  color: var(--primary-color);
+  font-family: var(--font-p);
+  margin-top: -3px;
+  margin-bottom: 10px;
+}
+.helper_text {
+  margin-left: -85px;
+}
+.checkbox_group {
+  margin-left: -123px;
+}
+input[type="checkbox"] {
+  transform: scale(0.8);
+}
+#showPassword {
+  accent-color: var(--primary-color);
+}
+
+#email_valid {
+  height: 10px;
+}
+input::placeholder {
+  color: var(--primary-color);
+  font-family: var(--font-p);
+  font-size: 0.8rem;
+  opacity: 70%;
+}
+
+.container_form_connexion button[type="submit"] {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+button[type="submit"]:hover {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+#forgot {
+  font-family: var(--font-p);
+  color: var(--primary-color);
+  font-size: 0.7rem;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+input[type="email"],
+input[type="password"],
+input[type="text"],
+input[type="tel"] {
+  width: 250px;
+  height: 30px;
+  border: solid 1px var(--primary-color);
+  border-radius: 5px;
+  padding: 5px;
+  font-family: var(--font-p);
+}
+
+label[for="email"],
+label[for="password"],
+.signup_text,
+label[for="firstname"],
+label[for="lastname"],
+label[for="telephone"],
+label[for="password_confirm"] {
+  color: var(--primary-color);
+  font-family: var(--font-p-bold);
+  font-size: 0.8rem;
+}
+
+.signup_text a {
+  color: var(--accent-color); /* couleur du texte */
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.section_form_connexion {
+  margin-top: -30px;
 }
