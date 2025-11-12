@@ -22,26 +22,19 @@
     <!--HEADER-->
     <header>
         <div class="container">
-            <img id="logo" src="./public/image/logoHD.png" alt="image du logo de Violette Gilavert Reflexologie">
-            <div class="pink_line"></div>
+            <?php include __DIR__ . '/components/navbar.php'; ?>
         </div>
     </header>
-
     <!--main-->
-
     <main>
-        <div class="container hero">
-         
-            <h2>PAGE NON TROUVÉE </h2>
-          
+        <div class="container_hero">
+            <h1>PAGE NON TROUVÉE </h1>
         </div>
-
-
-        <section class="articles">
-
-        </section>
     </main>
-    
+    <footer>
+        <?php include __DIR__ . '/components/footer.php'; ?>
+    </footer>
+    <script src="<?= BASE_URL ?>/public/script/script.js"></script>
 
 </body>
 

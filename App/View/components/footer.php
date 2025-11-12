@@ -11,8 +11,9 @@
         <p class="retour">RETOUR A L'ACCUEIL</p>
     </a>
     <ul class="ul_mentions">
-        <li class="li_mentions"><a href="">Mentions légales</a></li>
-        <li class="li_mentions"><a href="">politique de confidentialité</a></li>
+        <li class="li_mentions"><a href="<?= BASE_URL ?>/mentions-legales">Mentions <br> légales</a></li>
+        <li class="li_mentions"><a href="<?= BASE_URL ?>/politique-confidentialite">Politique de <br> confidentialité</a></li>
+        <li class="li_mentions"><a href="<?= BASE_URL ?>/CGV">CGV</a></li>
     </ul>
     <p id="clement">• Site web réalisé par Clément Bourguet - 2025 •</p>
 </div>

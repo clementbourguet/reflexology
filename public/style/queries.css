@@ -97,11 +97,11 @@
     width: 100%;
   }
   #mobile_menu {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 80%;             /* ou 100% selon ton design */
-  height: 100vh;
-  overflow: hidden;       /* ✅ interdit tout scroll */
-}
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100vh;
+    overflow: hidden;
+  }
 }

@@ -28,7 +28,7 @@
     </header>
 
     <!--------------main---------------->
-    <section class="btn_back">
+    <section class="btn_back" id="btn_back">
         <a id="btn_back">
             < Retour</a>
     </section>

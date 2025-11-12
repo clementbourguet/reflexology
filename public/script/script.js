@@ -163,10 +163,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 // -------------------- Bouton retour < Retour --------------------
 
-document.getElementById('btn_back').addEventListener('click', function (e) {
+const btnBack = document.getElementById('btn_back');
+if (btnBack) {
+  btnBack.addEventListener('click', function (e) {
     e.preventDefault();
     history.back();
   });
+}
 
 // --------------------checkbox afficher/masquer mot de passe (formulaire) -----------
   function togglePassword() {

@@ -57,6 +57,7 @@ nav ul {
 #custom {
   color: var(--accent-color);
   font-family: var(--font-p-bold);
+  font-size: 0.8rem;
   pointer-events: none;
   cursor: default;
 }
@@ -494,4 +495,13 @@ label[for="password_confirm"] {
 
 .section_form_connexion {
   margin-top: -30px;
+}
+
+
+.container_hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 400px;
 }
