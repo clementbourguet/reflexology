@@ -139,17 +139,7 @@
                 </div>
             </div>
         </section>
-        <section class="hidden_confirm">
-            <div class="prestation_field">
-                <p>1 séance de Réflexologie plantaire</p>
-            </div>
-            <div class="date_field">
-                <p>vendredi 11 juillet de 10h à 11h</p>
-            </div>
-            <div class="identification_field">
-                Nouveau sur ce service ?
-            </div>
-        </section>
+        
     </main>
     <!------------------------------FOOTER------------------------------->
     <footer>

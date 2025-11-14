@@ -78,6 +78,15 @@ nav ul {
 .hero_section .pink_line {
   margin-top: 1rem;
 }
+
+.main_nav a.active {
+  color: var(--primary-color);
+  font-weight: bold;
+  border-bottom: 1px solid var(--accent-color);
+  padding-bottom: 5px;
+  padding-bottom: 5px;
+}
+
 /*------------------Main---------------------*/
 main {
   background: linear-gradient(
@@ -496,7 +505,6 @@ label[for="password_confirm"] {
 .section_form_connexion {
   margin-top: -30px;
 }
-
 
 .container_hero {
   display: flex;
