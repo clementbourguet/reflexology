@@ -30,7 +30,14 @@
   }
 }
 
-/* Responsive : ajustez la taille des fleurs */
+@media screen and (min-width: 768px) and (max-width: 1216px) {
+  #mobile_menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+/*  ajuste la taille des fleurs */
 @media (max-width: 768px) {
   .flowers {
     height: 350px;

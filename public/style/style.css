@@ -79,14 +79,25 @@ nav ul {
   margin-top: 1rem;
 }
 
+.main_nav a {
+    position: relative;
+    padding-bottom: 8px;
+}
 .main_nav a.active {
-  color: var(--primary-color);
-  font-weight: bold;
-  border-bottom: 1px solid var(--accent-color);
-  padding-bottom: 5px;
-  padding-bottom: 5px;
+    font-weight: bold;
 }
 
+.main_nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22px;
+    height: 3px;
+    background-color: var(--accent-color);
+    border-radius: 10px;
+}
 /*------------------Main---------------------*/
 main {
   background: linear-gradient(
