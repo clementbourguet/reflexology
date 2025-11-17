@@ -1,4 +1,3 @@
-
 <!-- components/navbar.php -->
 <?php
 // Récupère l'URL actuelle

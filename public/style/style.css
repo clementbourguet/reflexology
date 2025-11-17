@@ -80,23 +80,23 @@ nav ul {
 }
 
 .main_nav a {
-    position: relative;
-    padding-bottom: 8px;
+  position: relative;
+  padding-bottom: 8px;
 }
 .main_nav a.active {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .main_nav a.active::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 22px;
-    height: 3px;
-    background-color: var(--accent-color);
-    border-radius: 10px;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 22px;
+  height: 3px;
+  background-color: var(--accent-color);
+  border-radius: 10px;
 }
 /*------------------Main---------------------*/
 main {
@@ -523,4 +523,56 @@ label[for="password_confirm"] {
   align-items: center;
   justify-content: center;
   height: 400px;
+}
+
+/*--------------------Admin--------------------*/
+
+.service_form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.container_form_connexion select {
+  width: 220px;
+  height: 40px;
+  font-family: var(--font-p);
+  font-size: 0.7rem;
+  color: var(--primary-color);
+  border-radius: 6px;
+  border: solid 1px;
+}
+label[for="service_id"],
+.service_form h2 {
+  font-family: var(--font-p-bold);
+  color: var(--accent-color);
+  font-size: 0.9rem;
+}
+.service_form form[method="post"] {
+  display: flex;
+  align-items: flex-end;
+  font-family: var(--font-p);
+  font-size: 0.9rem;
+  color: var(--primary-color);
+}
+
+textarea[name="description"] {
+  margin-top: 10px;
+  height: 200px;
+  width: 260px;
+  color: var(--primary-color);
+}
+input[type="text"],
+input[type="number"] {
+  color: var(--primary-color);
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+}
+.actions a {
+    color: var(--accent-color);
+    text-decoration: underline;
+    font-weight: bold;
 }

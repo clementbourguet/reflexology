@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/style/variables.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/style/fonts.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/style/style.css">
-    <link rel="stylesheet" href="<?= BASE_URL ?>/public/style/back_office.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/style/calendar.css">
     <link rel="stylesheet" href="<?= BASE_URL ?>/public/style/queries.css">
     <!--favicon-->
@@ -30,15 +29,13 @@
     <main>
         <div class="container_form_connexion">
             <h1>Back Office - Gestion des prestations</h1>
-
-
+            
             <form method="GET" action="<?= BASE_URL ?>/admin">
                 <label for="service_id">Choisir une prestation :</label>
                 <select name="id" id="service_id" onchange="this.form.submit()">
                     <option value="">-- Sélectionner --</option>
                     <?php foreach ($services as $service): ?>
-                        <option value="<?= $service['id'] ?>"
-                            <?= isset($_GET['id']) && $_GET['id'] == $service['id'] ? 'selected' : '' ?>>
+                        <option value="<?= $service['id'] ?>" <?= isset($_GET['id']) && $_GET['id'] == $service['id'] ? 'selected' : '' ?>>
                             <?= htmlspecialchars($service['name']) ?>
                         </option>
                     <?php endforeach; ?>
@@ -57,10 +54,12 @@
                             <textarea name="description"><?= htmlspecialchars($selectedService['description']) ?></textarea>
                         </label>
                         <label>Durée (minutes)
-                            <input type="number" name="duration_minutes" value="<?= htmlspecialchars($selectedService['duration_minutes']) ?>">
+                            <input type="number" name="duration_minutes"
+                                value="<?= htmlspecialchars($selectedService['duration_minutes']) ?>">
                         </label>
                         <label>Prix (€)
-                            <input type="number" step="0.01" name="price" value="<?= htmlspecialchars($selectedService['price']) ?>">
+                            <input type="number" name="price"
+                                value="<?= htmlspecialchars($selectedService['price']) ?>">
                         </label>
                         <label>Active ?
                             <input type="checkbox" name="active" value="1" <?= $selectedService['active'] ? 'checked' : '' ?>>
@@ -68,7 +67,8 @@
 
                         <div class="actions">
                             <button type="submit">Enregistrer</button>
-                            <a href="<?= BASE_URL ?>/admin/delete/<?= $selectedService['id'] ?>" onclick="return confirm('Supprimer cette prestation ?')">Supprimer</a>
+                            <a href="<?= BASE_URL ?>/admin/delete/<?= $selectedService['id'] ?>"
+                                onclick="return confirm('Supprimer cette prestation ?')">Supprimer</a>
                         </div>
                     </form>
                 </div>

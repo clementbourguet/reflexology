@@ -41,7 +41,7 @@ class Service
         $stmt->bindParam(1, $data['name'], \PDO::PARAM_STR);
         $stmt->bindParam(2, $data['description'], \PDO::PARAM_STR);
         $stmt->bindParam(3, $data['duration_minutes'], \PDO::PARAM_INT);
-        $stmt->bindParam(4, $data['price']); // prix peut être decimal → pas de PARAM_INT
+        $stmt->bindParam(4, $data['price']);
         $active = $data['active'] ?? true;
         $stmt->bindParam(5, $active, \PDO::PARAM_BOOL);
 
@@ -58,7 +58,7 @@ class Service
         $stmt->bindParam(1, $data['name'], \PDO::PARAM_STR);
         $stmt->bindParam(2, $data['description'], \PDO::PARAM_STR);
         $stmt->bindParam(3, $data['duration_minutes'], \PDO::PARAM_INT);
-        $stmt->bindParam(4, $data['price']); // prix → float/decimal
+        $stmt->bindParam(4, $data['price']);
         $active = $data['active'] ?? true;
         $stmt->bindParam(5, $active, \PDO::PARAM_BOOL);
         $stmt->bindParam(6, $id, \PDO::PARAM_INT);
@@ -66,11 +66,15 @@ class Service
         $stmt->execute();
     }
 
-    public function deleteService(int $id): void
+    public function deleteService(int $id): bool
     {
-        $sql = "DELETE FROM services WHERE id = ?";
-        $stmt = $this->connexion->prepare($sql);
-        $stmt->bindParam(1, $id, \PDO::PARAM_INT);
-        $stmt->execute();
+        try {
+            $sql = "DELETE FROM services WHERE id = ?";
+            $stmt = $this->connexion->prepare($sql);
+            return $stmt->execute([$id]); // Passer directement le paramètre
+        } catch (\PDOException $e) {
+            error_log("Erreur lors de la suppression du service : " . $e->getMessage());
+            return false;
+        }
     }
 }
