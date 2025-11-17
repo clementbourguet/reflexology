@@ -28,6 +28,24 @@
     height: 450px;
     top: 17rem;
   }
+  /*-------Admin form--------*/
+  .container_form_connexion {
+    max-width: 1600px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+  .container_form_connexion select {
+    width: 460px;
+    font-size: 1rem;
+  }
+  .service_form form[method="POST"] {
+    width: 460px;
+  }
+  input[type="text"],
+  input[type="number"],
+  textarea[name="description"] {
+    width: 460px;
+  }
 }
 
 @media screen and (min-width: 768px) and (max-width: 1216px) {

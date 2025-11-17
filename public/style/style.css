@@ -527,52 +527,147 @@ label[for="password_confirm"] {
 
 /*--------------------Admin--------------------*/
 
-.service_form {
+/* Container principal */
+.container_form_connexion {
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+.container_form_connexion h1 {
+  text-align: center;
+  font-family: var(--font-h1);
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+/* Formulaire de sélection */
+.container_form_connexion > form:first-of-type {
   display: flex;
-  align-items: center;
   flex-direction: column;
-  margin-top: 20px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+label[for="service_id"] {
+  font-family: var(--font-p-bold);
+  color: var(--accent-color);
+  font-size: 0.9rem;
+  text-align: center;
 }
 
 .container_form_connexion select {
-  width: 220px;
+  width: 260px;
   height: 40px;
   font-family: var(--font-p);
   font-size: 0.7rem;
   color: var(--primary-color);
   border-radius: 6px;
-  border: solid 1px;
+  border: solid 1px var(--primary-color);
+  padding: 0 10px;
 }
-label[for="service_id"],
+
+/* Blocs de formulaire */
+.service_form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  border-radius: 8px;
+}
+
 .service_form h2 {
   font-family: var(--font-p-bold);
   color: var(--accent-color);
   font-size: 0.9rem;
+  text-align: center;
 }
-.service_form form[method="post"] {
+
+/* Formulaire POST */
+.service_form form[method="POST"] {
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
+  width: 260px;
+}
+
+.service_form form[method="POST"] label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   font-family: var(--font-p);
   font-size: 0.9rem;
   color: var(--primary-color);
+  text-align: center;
+}
+
+/* Champs de formulaire */
+input[type="text"],
+input[type="number"],
+textarea[name="description"] {
+  margin-top: 10px;
+  width: 260px;
+  padding: 8px 10px;
+  font-family: var(--font-p);
+  font-size: 0.8rem;
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 6px;
 }
 
 textarea[name="description"] {
+  height: 180px;
+  resize: vertical;
+}
+
+/* Checkbox */
+.service_form label:has(input[type="checkbox"]) {
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
   margin-top: 10px;
-  height: 200px;
-  width: 260px;
-  color: var(--primary-color);
 }
-input[type="text"],
-input[type="number"] {
-  color: var(--primary-color);
+
+input[type="checkbox"] {
+  width: auto;
+  margin: 0;
+  cursor: pointer;
+  accent-color: var(--primary-color);
 }
+
+/* Actions */
 .actions {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+  width: 100%;
 }
+
+.actions button {
+  width: 200px;
+  padding: 10px 20px;
+  font-family: var(--font-p-bold);
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  background-color: white;
+  border: solid 1px var(--primary-color);
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+
 .actions a {
-    color: var(--accent-color);
-    text-decoration: underline;
-    font-weight: bold;
+  color: var(--accent-color);
+  text-decoration: underline;
+  font-family: var(--font-p-bold);
+  font-size: 0.85rem;
+  transition: opacity 0.3s;
+  margin-top: -20px;
+  margin-bottom: 10px;
 }
+
+.new_service {
+  background-color: color-mix(in srgb, var(--accent-color) 20%, transparent);
+}
+
