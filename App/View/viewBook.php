@@ -79,21 +79,21 @@
                     <h3>Choix de l'horaire</h3><span></span>
                 </div>
                 <div class="calendar_container">
-                    <div class="date_display">
-                        <a href="" id="prev_arrow"><img src="<?= BASE_URL ?>/public/image/left_arrow.png" alt="flèche gauche pour une date antérieure"></a>
+                    <div class="date_display" role="group" aria-label="Navigation du calendrier" aria-controls="slots_list">
+                        <a href="" id="prev_arrow" type="button" aria-label="Date précédente" aria-controls="display_date"><img src="<?= BASE_URL ?>/public/image/left_arrow.png" alt="flèche gauche pour une date antérieure"></a>
                         <div id="display_1">
-                            <h3 id="display_date"></h3>
+                            <h3 id="display_date" aria-live="polite" aria-atomic="true"></h3>
                         </div>
-                        <a href="" id="next_arrow"><img src="<?= BASE_URL ?>/public/image/right_arrow.png" alt="flèche droite pour une date postérieure"></a>
+                        <a href="" id="next_arrow" type="button" aria-label="Date suivante" aria-controls="display_date"><img src="<?= BASE_URL ?>/public/image/right_arrow.png" alt="flèche droite pour une date postérieure"></a>
                     </div>
                     <div class="slots_display">
-                        <ul></ul>
+                        <ul role="list" aria-labelledby="calendar_title"></ul>
                     </div>
                 </div>
             </section>
         <?php else: ?>
-            <section class="no_service_selected">
-                <p>Veuillez sélectionner une prestation pour accéder au calendrier</p>
+            <section class="no_service_selected" role="region" aria-labelledby="no_service_msg">
+                <p id="no_service_msg">Veuillez sélectionner une prestation pour accéder au calendrier</p>
             </section>
         <?php endif; ?>
     </main>

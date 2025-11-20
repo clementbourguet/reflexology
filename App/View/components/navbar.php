@@ -9,12 +9,12 @@ $current_path = str_replace(rtrim(BASE_URL, '/'), '', $current_path);
 <nav aria-label="navigation principale">
     <div class="logo">
         <a href="<?= BASE_URL ?>/">
-            <img id="logo" src="<?= BASE_URL ?>/public/image/logoHD.png" alt="Logo Violette Gilavert Reflexologie">
+            <img id="logo" src="<?= BASE_URL ?>/public/image/logoHD.png" alt="Logo de Violette Gilavert Reflexologue">
         </a>
     </div>
     <div class="burger">
         <a id="burger_menu_trigger" href="#">
-            <img id="burger_menu" src="<?= BASE_URL ?>/public/image/burger_menu.png" alt="Logo menu burger">
+            <img id="burger_menu" src="<?= BASE_URL ?>/public/image/burger_menu.png" alt="Logo menu burger, trois bandes horizontales">
         </a>
     </div>
     <div>
@@ -59,7 +59,7 @@ $current_path = str_replace(rtrim(BASE_URL, '/'), '', $current_path);
             <?php else: ?>
                 <li class="user-link">
                     <a href="<?= BASE_URL ?>/connexion">
-                        <img id="user_logo" src="<?= BASE_URL ?>/public/image/user.png" alt="icône utilisateur">
+                        <img id="user_logo" src="<?= BASE_URL ?>/public/image/user.png" alt="icône utilisateur pour se connecter ou s'inscrire">
                     </a>
                 </li>
             <?php endif; ?>

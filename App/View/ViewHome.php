@@ -34,14 +34,17 @@
             <div class="pink_line"></div>
         </div>
         <div class="flowers">
-            <img id="light_flower" src="./public/image/light_flower.png" alt="logo fleur violette opacité">
-            <img id="light_flower_2" src="./public/image/light_flower.png" alt="logo fleur violette opacité">
+            <img id="light_flower" src="./public/image/light_flower.png" alt="image de fleur de faible opacité" aria-hidden="true">
+            <img id="light_flower_2" src="./public/image/light_flower.png" alt="image de fleur de faible opacité" aria-hidden="true">
         </div>
 
         <section class="buttons">
-            <a class="btn_reserver" href="<?= BASE_URL ?>/book">RÉSERVER UNE SÉANCE</a>
-            <a class="savoir_plus" href="#">EN SAVOIR PLUS</a>
-            <img id="arrow" src="<?= BASE_URL ?>/public/image/arrow.png" alt="Logo de fleche vers le bas">
+            <a class="btn_reserver" href="<?= BASE_URL ?>/book" aria-label="Réserver une séance de réflexologie">
+                RÉSERVER UNE SÉANCE
+            </a>
+            <a class="savoir_plus" href="#" aria-label="En savoir plus sur la réflexologie">EN SAVOIR PLUS</a>
+            <img id="arrow" src="<?= BASE_URL ?>/public/image/arrow.png"
+                alt="Flèche vers le bas" aria-label="Descendre vers la section suivante">
         </section>
 
         <section class="articles">
@@ -54,9 +57,10 @@
                     parties du corps, afin d'optimiser les effets du <em>bien-etre</em> et améliorer la qualité de vie
                     du
                     quotidien.</p></br>
-                <a href="#">
+                <a href="#" aria-label="En savoir plus sur le déroulement d'une séance">
                     <p>En savoir plus...</p>
                 </a>
+
             </article>
             <div class="pink_line"></div>
             <article>
@@ -75,7 +79,7 @@
                     aiguille” du détecteur manuel, j’adopte une communication positive.
                     Je note les priorités sur mon recueil d’information et le secondaire pour les séances suivantes...
                 </p></br>
-                <a href="#">
+                <a href="#" aria-label="En savoir plus sur le déroulement d'une séance">
                     <p>En savoir plus...</p>
                 </a>
             </article>
