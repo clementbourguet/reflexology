@@ -28,122 +28,78 @@
     </header>
 
     <!--main-->
-
+    <section class="btn_back" id="btn_back">
+        <a id="btn_back">
+            < Retour</a>
+    </section>
     <main>
-        <section class="section_reserver">
-            <div class="container_reserver">
-                <h1 id="h1_medium">PRENDRE RENDEZ-VOUS</h1>
-                <div class="pink_line"></div>
-            </div>
-            <div class="accordion_list">
-                <div class="prestation_title">
-                    <h3>Choix de la prestation</h3><span></span>
-                </div>
-                <ul id="accordion">
-                    <li>
-                        <label for="first">Réflexologie plantaire<img src="<?= BASE_URL ?>/public/image/accordion_arrow.png" alt=""></label>
-                        <input type="checkbox" id="first">
-                        <div class="content">
-                            <h4 class="h4_accordion">
-                                Séance personnalisée - 1H
-                            </h4>
-                            <p class="p_accordion">
-                                Un entretien est prévu en début de séance pour permettre un recueil d'informations
-                            </p>
-                            <h4 class="h4_accordion">
-                                50 Euros
-                            </h4>
-                            <div class="checkbox_box">
-                                <input type="checkbox" id="checkbox_first" name="checkbox_first">
-                                <label for="checkbox_first">Choisir</label>
-                            </div>
+        <!-------------------------selection prestation------------------------------>
+        <h3 id="service_choice">CHOIX DE LA PRESTATION</h3>
+        <section class="services_selection">
+            <div class="services_grid">
+                <?php foreach ($services as $service): ?>
+                    <article class="service_card <?= ($selectedServiceId === $service['id']) ? 'selected' : '' ?>"
+                        data-service-id="<?= $service['id'] ?>">
+                        <div class="service_header">
+                            <h4 class="service_name"><?= htmlspecialchars($service['name']) ?></h4>
+                            <span class="service_duration"><?= $service['duration_minutes'] ?> min</span>
                         </div>
-                    </li>
-                    <li>
-                        <label for="second">Réflexologie palmaire<img src="<?= BASE_URL ?>/public/image/accordion_arrow.png" alt=""></label>
-                        <input type="checkbox" id="second">
-                        <div class="content">
-                            <h4 class="h4_accordion">
-                                Séance personnalisée - 1H
-                            </h4>
-                            <p class="p_accordion">
-                                Un entretien est prévu en début de séance pour permettre un recueil d'informations
-                            </p>
-                            <h4 class="h4_accordion">
-                                50 Euros
-                            </h4>
-                            <div class="checkbox_box">
-                                <input type="checkbox" id="checkbox_second" name="checkbox_second">
-                                <label for="checkbox_second">Choisir</label>
-                            </div>
+                        <div class="service_body">
+                            <p class="service_price"><?= number_format($service['price'], 2, ',', ' ') ?> €</p>
+                            <p class="service_description"><?= htmlspecialchars($service['description']) ?></p>
                         </div>
-                    </li>
-                    <li>
-                        <label for="third">Réflexologie faciale<img src="<?= BASE_URL ?>/public/image/accordion_arrow.png" alt=""></label>
-                        <input type="checkbox" id="third">
-                        <div class="content">
-                            <h4 class="h4_accordion">
-                                Séance personnalisée - 1H
-                            </h4>
-                            <p class="p_accordion">
-                                Un entretien est prévu en début de séance pour permettre un recueil d'informations
-                            </p>
-                            <h4 class="h4_accordion">
-                                50 Euros
-                            </h4>
-                            <div class="checkbox_box">
-                                <input type="checkbox" id="checkbox_third" name="checkbox_third">
-                                <label for="checkbox_third">Choisir</label>
-                            </div>
+                        <div class="service_footer">
+                            <button class="btn_select_service" type="button" onclick="selectService(<?= $service['id'] ?>)">
+                                <?= ($selectedServiceId === $service['id']) ? 'Sélectionné ✓' : 'Sélectionner' ?>
+                            </button>
                         </div>
-                    </li>
-                    <li>
-                        <label for="fourth">Réflexologie auriculaire<img src="<?= BASE_URL ?>/public/image/accordion_arrow.png" alt=""></label>
-                        <input type="checkbox" id="fourth">
-                        <div class="content">
-                            <h4 class="h4_accordion">
-                                Séance personnalisée - 1H
-                            </h4>
-                            <p class="p_accordion">
-                                Un entretien est prévu en début de séance pour permettre un recueil d'informations
-                            </p>
-                            <h4 class="h4_accordion">
-                                50 Euros
-                            </h4>
-                            <div class="checkbox_box">
-                                <input type="checkbox" id="checkbox_fourth" name="checkbox_fourth">
-                                <label for="checkbox_fourth">Choisir</label>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                    </article>
+                <?php endforeach; ?>
             </div>
 
+            <?php if ($selectedService): ?>
+                <div class="service_selected_info">
+                    <div class="selected_content">
+                        <span class="check_icon">✓</span>
+                        <div class="selected_text">
+                            <strong>Prestation sélectionnée :</strong>
+                            <?= htmlspecialchars($selectedService['name']) ?> -
+                            <?= number_format($selectedService['price'], 2, ',', ' ') ?> €
+                            (<?= $selectedService['duration_minutes'] ?> min)
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
         </section>
         <!-------------------------Calendrier------------------------------>
 
-        <section class="calendar">
-            <div class="prestation_title">
-                <h3>Choix de l'horaire</h3><span></span>
-            </div>
-            <div class="calendar_container">
-                <div class="date_display">
-                    <a href="" id="prev_arrow"><img src="<?= BASE_URL ?>/public/image/left_arrow.png" alt="flèche gauche pour une date antérieure"></a>
-                    <div id="display_1">
-                        <h3 id="display_date"></h3>
+        <?php if ($selectedService): ?>
+            <section class="calendar">
+                <div class="prestation_title">
+                    <h3>Choix de l'horaire</h3><span></span>
+                </div>
+                <div class="calendar_container">
+                    <div class="date_display">
+                        <a href="" id="prev_arrow"><img src="<?= BASE_URL ?>/public/image/left_arrow.png" alt="flèche gauche pour une date antérieure"></a>
+                        <div id="display_1">
+                            <h3 id="display_date"></h3>
+                        </div>
+                        <a href="" id="next_arrow"><img src="<?= BASE_URL ?>/public/image/right_arrow.png" alt="flèche droite pour une date postérieure"></a>
                     </div>
-                    <a href="" id="next_arrow"><img src="<?= BASE_URL ?>/public/image/right_arrow.png" alt="flèche droite pour une date postérieure"></a>
+                    <div class="slots_display">
+                        <ul></ul>
+                    </div>
                 </div>
-                <div class="slots_display">
-                    <ul></ul>
-                </div>
-            </div>
-        </section>
-        
+            </section>
+        <?php else: ?>
+            <section class="no_service_selected">
+                <p>Veuillez sélectionner une prestation pour accéder au calendrier</p>
+            </section>
+        <?php endif; ?>
     </main>
     <!------------------------------FOOTER------------------------------->
     <footer>
-       <?php include __DIR__ . '/components/footer.php'; ?>
+        <?php include __DIR__ . '/components/footer.php'; ?>
     </footer>
     <!------------------------------SCRIPT------------------------------->
     <script src="<?= BASE_URL ?>/public/script/script.js"></script>

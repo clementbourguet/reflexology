@@ -10,13 +10,20 @@ class BookController {
         $serviceModel = new Service();
         $services = $serviceModel->getAllServices();
 
-        // Option : ne garder que les services 'active' à true (ajuste selon ton schéma DB)
+        // Filtrer uniquement les services actifs
         $services = array_filter($services, function($s) {
-            // certains DB renvoient '1' / '0' ou true/false
             return isset($s['active']) && (int)$s['active'] === 1;
         });
 
-        // Inclure la vue (la vue pourra utiliser $services)
+        // Récupérer le service sélectionné s'il existe
+        $selectedServiceId = isset($_GET['service']) ? (int)$_GET['service'] : null;
+        $selectedService = null;
+        
+        if ($selectedServiceId) {
+            $selectedService = $serviceModel->getServiceById($selectedServiceId);
+        }
+
+        // Inclure la vue (la vue pourra utiliser $services, $selectedService et $selectedServiceId)
         include "App/View/viewBook.php";
     }
 

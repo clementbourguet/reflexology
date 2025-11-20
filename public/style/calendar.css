@@ -1,117 +1,351 @@
 /*------CALENDRIER------*/
 .calendar {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
 }
 
 .calendar_container {
-    background-color: white;
-    width: 40%;
-    border-radius: 0px 15px 15px 0px;
-    border: solid 1px var(--primary-color);
-    padding-bottom: 20px;
-    margin-bottom: 100px;
+  background-color: white;
+  width: 40%;
+  border-radius: 0px 15px 15px 0px;
+  border: solid 1px var(--primary-color);
+  padding-bottom: 20px;
+  margin-bottom: 100px;
 }
 
 .date_display,
 .slots_display {
-    display: flex;
-    justify-content: space-around;
+  display: flex;
+  justify-content: space-around;
 }
 
 .calendar_main {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  text-align: center;
 }
 
 .date_display h3 {
-    font-size: 1.2em;
-    letter-spacing: 0;
-    font-weight: bold;
-    line-height: 1.1em;
-    position: relative;
-    margin-top: 2px;
+  font-size: 1.2em;
+  letter-spacing: 0;
+  font-weight: bold;
+  line-height: 1.1em;
+  position: relative;
+  margin-top: 2px;
 }
 
 .slots_display ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    text-align: center;
-    margin-top: 20px;
-    line-height: 2em;
-    z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  line-height: 2em;
+  z-index: 5;
 }
 
 .slots_display li {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .date_display img {
-    width: 10px;
-    padding-top: 25px;
+  width: 10px;
+  padding-top: 25px;
 }
 
 .date_display a {
-    width: 30px;
+  width: 30px;
 }
 
 .date_display {
-    align-content: center;
-    align-items: center;
-    align-self: center;
-    text-align: center;
-    height: 65px;
-    border-bottom: solid 1px var(--primary-color);
+  align-content: center;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+  height: 65px;
+  border-bottom: solid 1px var(--primary-color);
 }
 
 #display_1,
 #display_2,
 #display_3 {
-    align-self: center;
-    text-align: center;
+  align-self: center;
+  text-align: center;
 }
 
 .slots_display li.reserved {
-    color: var(--secondary-color);
-    cursor: not-allowed;
-    text-decoration: line-through;
-    cursor: inherit;
+  color: var(--secondary-color);
+  cursor: not-allowed;
+  text-decoration: line-through;
+  cursor: inherit;
 }
 
 .slots_display li {
-    color: var(--primary-color);
-    font-weight: bold;
-    font-size: 1rem;
+  color: var(--primary-color);
+  font-weight: bold;
+  font-size: 1rem;
 }
 
 footer {
-text-align: center;
+  text-align: center;
 }
 
 #clement {
-    font-size: 0.7rem;
-    color: var(--secondary-color);
-    margin: 0px 0px 25px 0px;
-    letter-spacing: 0.1rem;
-    font-family: var(--font-p-bold);
+  font-size: 0.7rem;
+  color: var(--secondary-color);
+  margin: 0px 0px 25px 0px;
+  letter-spacing: 0.1rem;
+  font-family: var(--font-p-bold);
 }
 
 /*--------Hidden_confirm---------*/
 
 .hidden_confirm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-p-bold);
+  color: var(--primary-color);
+  display: none;
+}
+
+/*--------accordeon---------*/
+
+/* Section Services */
+.services_selection {
+  padding: 0px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.prestation_title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.prestation_title h3 {
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.services_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 30px;
+}
+
+.service_card {
+  background: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 1px solid var(--primary-color);
+  display: flex;
+  flex-direction: column;
+}
+
+.service_card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.service_card.selected {
+  border: solid 4px var(--accent-color);
+}
+
+#service_choice {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: var(--font-h1);
+  font-size: 1.5rem;
+  letter-spacing: 3.5px;
+  padding: 20px;
+}
+.service_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-direction: column;
+}
+
+.service_name {
+  font-size: 1.1rem;
+  font-family: var(--font-p-bold);
+  color: var(--primary-color);
+}
+
+.service_duration {
+  background: var(--primary-color);
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-top: 15px;
+}
+
+.service_body {
+  flex-grow: 1;
+  margin-bottom: 20px;
+}
+
+.service_price {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--accent-color);
+  margin-bottom: 15px;
+}
+
+.service_description {
+  color: var(--primary-color);
+  line-height: 1.1;
+  font-size: 1.1rem;
+  font-family: var(--font-p);
+}
+
+.service_footer {
+  margin-top: auto;
+}
+
+.btn_select_service {
+  width: 100%;
+  padding: 15px 31px;
+  background-color: white;
+  color: var(--primary-color);
+  border: solid 1px var(--primary-color);
+  border-radius: 10px;
+  font-family: var(--font-p-bold);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn_select_service:active {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn_select_service:hover,
+.savoir_plus:hover {
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+}
+
+.service_card.selected .btn_select_service {
+  background: var(--primary-color);
+  color: white;
+}
+
+.service_card.selected .btn_select_service:hover {
+  background: var(--primary-color);
+}
+
+/* Info service sélectionné */
+.service_selected_info {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+  width: 70%;
+  align-self: center;
+}
+
+.selected_content {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.check_icon {
+  background: var(--accent-color);
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  flex-shrink: 0;
+}
+
+.selected_text {
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  font-family: var(--font-p-bold);
+  font-size: 0.8rem;
+}
+
+/* Message si aucun service sélectionné */
+.no_service_selected {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 60px 20px;
+}
+
+.no_service_selected p {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  font-family: var(--font-p-bold);
+  text-align: center;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .services_grid {
+    grid-template-columns: 1fr;
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: var(--font-p-bold);
-    color: var(--primary-color);
-    display: none;
+    justify-items: center;
+  }
+  .services_selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service_header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .prestation_title h3 {
+    font-size: 1.5rem;
+  }
+  .service_selection {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+  }
 }

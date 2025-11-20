@@ -60,6 +60,9 @@
   .flowers {
     height: 350px;
   }
+  .calendar_container {
+  width: 70%;
+}
 
   #light_flower,
   #light_flower_2 {

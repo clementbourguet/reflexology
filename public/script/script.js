@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // créneaux réservés par date (clé: date en yyyy-mm-dd)
   const bookedSlots = {
-    "2025-08-19": ["10h-11h", "14h-15h"],
-    "2025-08-20": ["9h-10h", "17h-18h"],
+    "2025-11-20": ["10h-11h", "14h-15h"],
+    "2025-11-21": ["9h-10h", "17h-18h"],
   };
 
   // formatage de la date en clé
@@ -181,4 +181,22 @@ if (btnBack) {
     } else {
         passwordInput.type = 'password';
     }
+}
+
+// ----------------Prestations viewBook----------------
+
+// ----Fonction de sélection/désélection de service----
+function selectService(serviceId) {
+    const currentUrl = new URL(window.location.href);
+    const currentServiceId = currentUrl.searchParams.get('service');
+    
+    // Si on clique sur le service déjà sélectionné, on le désélectionne
+    if (currentServiceId === serviceId.toString()) {
+        currentUrl.searchParams.delete('service');
+    } else {
+        // Sinon, on sélectionne le nouveau service
+        currentUrl.searchParams.set('service', serviceId);
+    }
+    
+    window.location.href = currentUrl.toString();
 }
