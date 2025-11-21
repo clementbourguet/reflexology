@@ -1,0 +1,135 @@
+@media screen and (min-width: 1024px) {
+}
+@media screen and (min-width: 768px) {
+  /*-------Menu burger--------*/
+  .burger {
+    display: none;
+  }
+  h1 {
+    font-size: 2.6rem;
+  }
+  h2 {
+    font-size: 2rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+    margin-top: 20px;
+  }
+  sup {
+    font-size: 1.2rem;
+  }
+  nav .logo #logo {
+    width: 480px;
+  }
+  .buttons {
+    margin-top: 50px;
+  }
+  .flowers {
+    height: 450px;
+    top: 17rem;
+  }
+  /*-------Admin form--------*/
+  .container_form_connexion {
+    max-width: 1600px;
+    margin: 2rem auto;
+    padding: 2rem;
+  }
+  .container_form_connexion select {
+    width: 460px;
+    font-size: 1rem;
+  }
+  .service_form form[method="POST"] {
+    width: 460px;
+  }
+  input[type="text"],
+  input[type="number"],
+  textarea[name="description"] {
+    width: 460px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1216px) {
+  #mobile_menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+/*  ajuste la taille des fleurs */
+@media (max-width: 768px) {
+  .flowers {
+    height: 350px;
+  }
+  .calendar_container {
+  width: 70%;
+}
+
+  #light_flower,
+  #light_flower_2 {
+    height: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .flowers {
+    height: 250px;
+    top: 13rem;
+  }
+
+  #light_flower,
+  #light_flower_2 {
+    height: 100%;
+  }
+}
+
+/* ------------------------gestion du menu burger---------------------------*/
+@media screen and (max-width: 767px) {
+  nav .main_nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(85vw, 420px);
+    background: white;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.12);
+    padding: 1rem 2rem;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    gap: 2.5rem;
+    transform: translateX(100%);
+    transition: transform 300ms ease;
+    z-index: 1200;
+    overflow-y: auto;
+  }
+
+  nav .main_nav.open {
+    transform: translateX(0);
+  }
+  nav .main-nav[aria-hidden="true"] {
+    pointer-events: none;
+  }
+  nav .main-nav li {
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  #close_icon {
+    width: 25px;
+  }
+  #close_menu {
+    display: flex;
+    justify-content: flex-end;
+    cursor: pointer;
+    width: 100%;
+  }
+  #mobile_menu {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    height: 100vh;
+    overflow: hidden;
+  }
+}
