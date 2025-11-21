@@ -92,7 +92,13 @@
   font-weight: bold;
   font-size: 1rem;
 }
-
+#prev_arrow,
+#next_arrow {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
 footer {
   text-align: center;
 }
@@ -116,7 +122,6 @@ footer {
   display: none;
 }
 
-/*--------accordeon---------*/
 
 /* Section Services */
 .services_selection {

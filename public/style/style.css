@@ -227,7 +227,7 @@ button[type="submit"] {
 }
 
 #arrow {
-  margin-top: 80px;
+  margin-top: 90px;
   width: 2.2em;
 }
 
@@ -671,3 +671,19 @@ input[type="checkbox"] {
   background-color: color-mix(in srgb, var(--accent-color) 20%, transparent);
 }
 
+/* ----------animation arrow------------*/
+
+#arrow {
+  display: block;
+  animation: bounce 2s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-35px); /* hauteur du rebond */
+  }
+}

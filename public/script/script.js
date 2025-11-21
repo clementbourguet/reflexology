@@ -60,17 +60,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
       // Griser si réservé
       if (reserved.includes(slot)) {
+              // navigation accessibilité
         li.classList.add("reserved");
+        li.setAttribute("aria-disabled", "true");
       } else {
-        // ajouter un clic pour sélectionner le créneau
+        li.setAttribute("tabindex", "0");
+        li.setAttribute("role", "button");
+        // ajouter un clic souris pour sélectionner le créneau
         li.addEventListener("click", () => {
           // décocher tous les autres
           const allSlots = slotsList.querySelectorAll("li");
-          allSlots.forEach((s) => s.classList.remove("selected"));
 
           // cocher celui-ci
           li.classList.add("selected");
         });
+        // clavier (Enter ou Space)
+      li.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          li.click();
+        }
+      });
       }
 
       slotsList.appendChild(li);
@@ -112,7 +122,7 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", function () {
   const trigger = document.getElementById("burger_menu_trigger");
   const menu = document.getElementById("mobile_menu");
-    const closeMenuBtn = document.getElementById("close_menu")
+  const closeMenuBtn = document.getElementById("close_menu");
 
   if (!trigger || !menu) return;
 
@@ -140,9 +150,9 @@ document.addEventListener("DOMContentLoaded", function () {
     toggleMenu();
   });
   closeMenuBtn.addEventListener("click", function () {
-        closeMenu();
-    });
-    
+    closeMenu();
+  });
+
   menu.addEventListener("click", function (e) {
     if (e.target.tagName === "LI" || e.target.closest("a")) {
       closeMenu();
@@ -153,50 +163,49 @@ document.addEventListener("DOMContentLoaded", function () {
       closeMenu();
     }
   });
-  document.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') {
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
       closeMenu();
     }
   });
 });
 
-
 // -------------------- Bouton retour < Retour --------------------
 
-const btnBack = document.getElementById('btn_back');
+const btnBack = document.getElementById("btn_back");
 if (btnBack) {
-  btnBack.addEventListener('click', function (e) {
+  btnBack.addEventListener("click", function (e) {
     e.preventDefault();
     history.back();
   });
 }
 
 // --------------------checkbox afficher/masquer mot de passe (formulaire) -----------
-  function togglePassword() {
-    const passwordInput = document.getElementById('password');
-    const checkbox = document.getElementById('showPassword');
-    
-    if (checkbox.checked) {
-        passwordInput.type = 'text';
-    } else {
-        passwordInput.type = 'password';
-    }
+function togglePassword() {
+  const passwordInput = document.getElementById("password");
+  const checkbox = document.getElementById("showPassword");
+
+  if (checkbox.checked) {
+    passwordInput.type = "text";
+  } else {
+    passwordInput.type = "password";
+  }
 }
 
 // ----------------Prestations viewBook----------------
 
 // ----Fonction de sélection/désélection de service----
 function selectService(serviceId) {
-    const currentUrl = new URL(window.location.href);
-    const currentServiceId = currentUrl.searchParams.get('service');
-    
-    // Si on clique sur le service déjà sélectionné, on le désélectionne
-    if (currentServiceId === serviceId.toString()) {
-        currentUrl.searchParams.delete('service');
-    } else {
-        // Sinon, on sélectionne le nouveau service
-        currentUrl.searchParams.set('service', serviceId);
-    }
-    
-    window.location.href = currentUrl.toString();
+  const currentUrl = new URL(window.location.href);
+  const currentServiceId = currentUrl.searchParams.get("service");
+
+  // Si on clique sur le service déjà sélectionné, on le désélectionne
+  if (currentServiceId === serviceId.toString()) {
+    currentUrl.searchParams.delete("service");
+  } else {
+    // Sinon, on sélectionne le nouveau service
+    currentUrl.searchParams.set("service", serviceId);
+  }
+
+  window.location.href = currentUrl.toString();
 }

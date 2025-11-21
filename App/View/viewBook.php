@@ -80,11 +80,15 @@
                 </div>
                 <div class="calendar_container">
                     <div class="date_display" role="group" aria-label="Navigation du calendrier" aria-controls="slots_list">
-                        <a href="" id="prev_arrow" type="button" aria-label="Date précédente" aria-controls="display_date"><img src="<?= BASE_URL ?>/public/image/left_arrow.png" alt="flèche gauche pour une date antérieure"></a>
+                        <button id="prev_arrow" aria-label="Date précédente" aria-controls="display_date">
+                            <img src="<?= BASE_URL ?>/public/image/left_arrow.png" alt="fleche de selection- précédent">
+                        </button>
                         <div id="display_1">
                             <h3 id="display_date" aria-live="polite" aria-atomic="true"></h3>
                         </div>
-                        <a href="" id="next_arrow" type="button" aria-label="Date suivante" aria-controls="display_date"><img src="<?= BASE_URL ?>/public/image/right_arrow.png" alt="flèche droite pour une date postérieure"></a>
+                        <button id="next_arrow" aria-label="Date suivante" aria-controls="display_date">
+                            <img src="<?= BASE_URL ?>/public/image/right_arrow.png" alt="flèche de selection - suivant">
+                        </button>
                     </div>
                     <div class="slots_display">
                         <ul role="list" aria-labelledby="calendar_title"></ul>

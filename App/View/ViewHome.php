@@ -34,17 +34,18 @@
             <div class="pink_line"></div>
         </div>
         <div class="flowers">
-            <img id="light_flower" src="./public/image/light_flower.png" alt="image de fleur de faible opacité" aria-hidden="true">
-            <img id="light_flower_2" src="./public/image/light_flower.png" alt="image de fleur de faible opacité" aria-hidden="true">
+            <img id="light_flower" src="<?= BASE_URL ?>/public/image/light_flower.png"
+                alt="image de fleur de faible opacité" aria-hidden="true">
+            <img id="light_flower_2" src="<?= BASE_URL ?>/public/image/light_flower.png"
+                alt="image de fleur de faible opacité" aria-hidden="true">
         </div>
-
         <section class="buttons">
             <a class="btn_reserver" href="<?= BASE_URL ?>/book" aria-label="Réserver une séance de réflexologie">
                 RÉSERVER UNE SÉANCE
             </a>
             <a class="savoir_plus" href="#" aria-label="En savoir plus sur la réflexologie">EN SAVOIR PLUS</a>
-            <img id="arrow" src="<?= BASE_URL ?>/public/image/arrow.png"
-                alt="Flèche vers le bas" aria-label="Descendre vers la section suivante">
+            <img id="arrow" src="<?= BASE_URL ?>/public/image/arrow.png" alt="Flèche vers le bas"
+                aria-label="Descendre vers la section suivante">
         </section>
 
         <section class="articles">
