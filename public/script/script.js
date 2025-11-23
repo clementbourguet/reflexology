@@ -29,8 +29,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // créneaux réservés par date (clé: date en yyyy-mm-dd)
   const bookedSlots = {
-    "2025-11-20": ["10h-11h", "14h-15h"],
-    "2025-11-21": ["9h-10h", "17h-18h"],
+    "2025-12-03": ["10h-11h", "17h-18h"],
+    "2025-12-02": ["10h-11h", "14h-15h", "15h-16h"],
+    "2025-12-01": ["9h-10h", "17h-18h"],
   };
 
   // formatage de la date en clé

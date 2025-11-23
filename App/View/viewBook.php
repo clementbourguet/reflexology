@@ -76,7 +76,7 @@
         <?php if ($selectedService): ?>
             <section class="calendar">
                 <div class="prestation_title">
-                    <h3>Choix de l'horaire</h3><span></span>
+                    <h3>Choix de l'horaire</h3>
                 </div>
                 <div class="calendar_container">
                     <div class="date_display" role="group" aria-label="Navigation du calendrier" aria-controls="slots_list">

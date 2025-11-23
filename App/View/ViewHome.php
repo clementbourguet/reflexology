@@ -75,7 +75,9 @@
                     Vous venez pour une raison particulière?
                     J’évalue les tensions physiques et / ou émotionnelles avec l’échelle numérique (EN de 0 à 10).
                     Connaissez-vous la réflexologie?
-                    J’explique la réflexologie et la méthode <strong>Sonia Fischmann®</strong> en expliquant le ressenti
+                    J’explique la réflexologie et la méthode <strong>Sonia Fischmann®</strong> <a href="https://eir-formation.com/" id="fischmann" target="_blank">
+                        https://eir-formation.com/
+                    </a> en expliquant le ressenti
                     “petite
                     aiguille” du détecteur manuel, j’adopte une communication positive.
                     Je note les priorités sur mon recueil d’information et le secondaire pour les séances suivantes...

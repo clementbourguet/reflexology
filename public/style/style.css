@@ -291,6 +291,13 @@ article a {
   text-decoration: underline;
 }
 
+#fischmann {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+#fischmann:visited {
+  color: var(--accent-color);
+}
 /*--------------------FOOTER--------------------*/
 footer {
   width: 100%;
@@ -656,7 +663,6 @@ input[type="checkbox"] {
   cursor: pointer;
 }
 
-
 .actions a {
   color: var(--accent-color);
   text-decoration: underline;
@@ -680,7 +686,8 @@ input[type="checkbox"] {
 }
 
 @keyframes bounce {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(0);
   }
   50% {

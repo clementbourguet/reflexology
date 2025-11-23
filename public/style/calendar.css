@@ -92,13 +92,15 @@
   font-weight: bold;
   font-size: 1rem;
 }
+
 #prev_arrow,
 #next_arrow {
     background: none;
     border: none;
-    padding: 0;
+    padding: 5px 20px;
     cursor: pointer;
 }
+
 footer {
   text-align: center;
 }
