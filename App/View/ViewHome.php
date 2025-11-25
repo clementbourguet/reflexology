@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Violette Gilavert Reflexologie</title>
+    <meta name="description" content="réflexologue région toulousaine, L'Union. Praticienne certifiée. Méthode Sonia Fischmann.
+     Réservez votre séance de réflexologie combinée en ligne. Consultations du lundi au vendredi.">
+    <title>Violette Gilavert Reflexologie Toulouse</title>
     <link rel="stylesheet" href="./public/style/variables.css">
     <link rel="stylesheet" href="./public/style/reset.css">
     <link rel="stylesheet" href="./public/style/fonts.css">
@@ -34,9 +36,9 @@
             <div class="pink_line"></div>
         </div>
         <div class="flowers">
-            <img id="light_flower" src="<?= BASE_URL ?>/public/image/light_flower.png"
+            <img id="light_flower" src="<?= BASE_URL ?>/public/image/light_flower.webp"
                 alt="image de fleur de faible opacité" aria-hidden="true">
-            <img id="light_flower_2" src="<?= BASE_URL ?>/public/image/light_flower.png"
+            <img id="light_flower_2" src="<?= BASE_URL ?>/public/image/light_flower.webp"
                 alt="image de fleur de faible opacité" aria-hidden="true">
         </div>
         <section class="buttons">
@@ -75,7 +77,8 @@
                     Vous venez pour une raison particulière?
                     J’évalue les tensions physiques et / ou émotionnelles avec l’échelle numérique (EN de 0 à 10).
                     Connaissez-vous la réflexologie?
-                    J’explique la réflexologie et la méthode <strong>Sonia Fischmann®</strong> <a href="https://eir-formation.com/" id="fischmann" target="_blank">
+                    J’explique la réflexologie et la méthode <strong>Sonia Fischmann®</strong>
+                    <a href="https://eir-formation.com/" id="fischmann" target="_blank">
                         https://eir-formation.com/
                     </a> en expliquant le ressenti
                     “petite

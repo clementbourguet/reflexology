@@ -9,7 +9,7 @@ $current_path = str_replace(rtrim(BASE_URL, '/'), '', $current_path);
 <nav aria-label="navigation principale">
     <div class="logo">
         <a href="<?= BASE_URL ?>/">
-            <img id="logo" src="<?= BASE_URL ?>/public/image/logoHD.png" alt="Logo de Violette Gilavert Reflexologue">
+            <img id="logo" src="<?= BASE_URL ?>/public/image/logoHD.webp" alt="Logo de Violette Gilavert Reflexologue">
         </a>
     </div>
     <div class="burger">

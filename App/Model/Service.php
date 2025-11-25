@@ -3,22 +3,33 @@
 namespace App\Model;
 
 use App\Utils\Bdd;
-
+use PDO;
+use PDOException;
 class Service
 {
     private \PDO $connexion;
 
     public function __construct()
     {
-        $this->connexion = (new Bdd())->connectBDD();
+        try {
+            $this->connexion = (new Bdd())->connectBDD();
+        } catch (PDOException $e) {
+            error_log("Erreur de connexion BDD dans Service : " . $e->getMessage());
+            throw new \RuntimeException("Impossible de se connecter à la base de données", 0, $e);
+        }
     }
 
     public function getAllServices(): array
     {
-        $sql = "SELECT id, name, description, duration_minutes, price, active FROM services";
-        $stmt = $this->connexion->prepare($sql);
-        $stmt->execute();
-        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+        try {
+            $sql = "SELECT id, name, description, duration_minutes, price, active FROM services";
+            $stmt = $this->connexion->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            error_log("Erreur lors de la récupération des services : " . $e->getMessage());
+            return [];
+        }
     }
 
     public function getServiceById(int $id): ?array
