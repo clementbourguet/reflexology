@@ -84,7 +84,7 @@
                             <img src="<?= BASE_URL ?>/public/image/left_arrow.png" alt="fleche de selection- précédent">
                         </button>
                         <div id="display_1">
-                            <h3 id="display_date" aria-live="polite" aria-atomic="true"></h3>
+                            <h3 id="display_date" tabindex="-1" aria-live="polite" aria-atomic="true"></h3>
                         </div>
                         <button id="next_arrow" aria-label="Date suivante" aria-controls="display_date">
                             <img src="<?= BASE_URL ?>/public/image/right_arrow.png" alt="flèche de selection - suivant">

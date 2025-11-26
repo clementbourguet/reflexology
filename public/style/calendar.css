@@ -93,6 +93,10 @@
   font-size: 1rem;
 }
 
+#display_date:focus {
+    outline: none;
+}
+
 #prev_arrow,
 #next_arrow {
     background: none;

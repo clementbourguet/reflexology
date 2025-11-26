@@ -101,6 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   updateDateDisplay();
+  document.getElementById("display_date").focus();
 
   // -------------------- Gestion des prestations, une seule checkbox à la fois --------------------
   const prestationCheckboxes = document.querySelectorAll(

@@ -57,6 +57,7 @@
   }
 }
 /*  ajuste la taille des fleurs */
+
 @media (max-width: 768px) {
   .flowers {
     height: 350px;
