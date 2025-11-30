@@ -29,14 +29,13 @@
     <main>
         <div class="container_form_connexion">
             <h1>Back Office - Gestion des prestations</h1>
-            
             <form method="GET" action="<?= BASE_URL ?>/admin">
                 <label for="service_id">Choisir une prestation :</label>
                 <select name="id" id="service_id" onchange="this.form.submit()">
                     <option value="">-- Sélectionner --</option>
                     <?php foreach ($services as $service): ?>
                         <option value="<?= $service['id'] ?>" <?= isset($_GET['id']) && $_GET['id'] == $service['id'] ? 'selected' : '' ?>>
-                            <?= htmlspecialchars($service['name']) ?>
+                            <?= \App\Utils\Utilitaire::sanitize($service['name']) ?>
                         </option>
                     <?php endforeach; ?>
                 </select>
@@ -48,18 +47,18 @@
                     <h2>Modifier la prestation</h2>
                     <form method="POST" action="<?= BASE_URL ?>/admin/edit/<?= $selectedService['id'] ?>">
                         <label>Titre
-                            <input type="text" name="name" value="<?= htmlspecialchars($selectedService['name']) ?>">
+                            <input type="text" name="name" value="<?= \App\Utils\Utilitaire::sanitize($selectedService['name']) ?>">
                         </label>
                         <label>Description
-                            <textarea name="description"><?= htmlspecialchars($selectedService['description']) ?></textarea>
+                            <textarea name="description"><?= \App\Utils\Utilitaire::sanitize($selectedService['description']) ?></textarea>
                         </label>
                         <label>Durée (minutes)
                             <input type="number" name="duration_minutes"
-                                value="<?= htmlspecialchars($selectedService['duration_minutes']) ?>">
+                                value="<?= \App\Utils\Utilitaire::sanitize($selectedService['duration_minutes']) ?>">
                         </label>
                         <label>Prix (€)
                             <input type="number" name="price"
-                                value="<?= htmlspecialchars($selectedService['price']) ?>">
+                                value="<?= \App\Utils\Utilitaire::sanitize($selectedService['price']) ?>">
                         </label>
                         <label>Active ?
                             <input type="checkbox" name="active" value="1" <?= $selectedService['active'] ? 'checked' : '' ?>>
